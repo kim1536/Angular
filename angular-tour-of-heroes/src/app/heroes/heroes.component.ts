@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
-import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-heroes',
@@ -10,23 +9,16 @@ import { MessageService } from '../message.service';
   styleUrls: ['./heroes.component.scss']
 })
 export class HeroesComponent implements OnInit {
-
-  selectedHero? : Hero;
   heroes: Hero[] = [];
 
-  constructor(private heroService: HeroService, private messageService : MessageService) { }
+  constructor(private heroService: HeroService) { }
 
   ngOnInit(): void {
     this.getHeroes();
   };
 
-  onSelect(hero: Hero): void{
-    this.selectedHero = hero;
-    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
-  };
-
   // TODO 
-  /*Observable(이밴트를 추상화), of함수(뭐임?) subscribe() <- Observable 호출 */
+  /*Observable(이밴트를 추상화; DB데이터를 찾는다), of함수(DB데이터를 담는다) subscribe(Observable의 of함수에 담은 데이터를 호출)  */
   getHeroes(): void {
     this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes)
   };
