@@ -14,7 +14,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 // import { TopicService } from './topic/topic.service';
 import { MessagesComponent } from './messages/messages.component';
-import { TopicComponent } from './topic/topic.component';
+// import { TopicComponent } from './topic/topic.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 
 @NgModule({
@@ -24,7 +24,6 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     HeroDetailComponent,
     DashboardComponent,
     MessagesComponent,
-    TopicComponent,
     HeroSearchComponent
   ],
   imports: [
